@@ -1,0 +1,7 @@
+Dijkstra's algorithm computes shortest paths in weighted graphs with non-negative edge weights.
+JSON formatting improves readability and consistency for APIs and configuration files.
+Token budgeting controls cost and latency by limiting context and output size per task.
+Local-first AI stacks can run fully offline using Ollama and open-source models.
+Planner-executor-summarizer architectures improve reliability by separating concerns.
+FastAPI supports efficient async APIs and Server-Sent Events for real-time dashboards.
+

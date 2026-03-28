@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-dotenv
+langgraph
+langchain
+langchain-ollama
+pydantic
+python-multipart
+pytest

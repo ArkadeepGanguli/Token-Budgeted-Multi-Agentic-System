@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token-Budgeted Multi-Agent Dashboard</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <h1>Token-Budgeted Heterogeneous Multi-Agent AI</h1>
+        <p>Hybrid Ollama + Groq workflow with routing, escalation, and live budget control.</p>
+      </header>
+
+      <section class="panel">
+        <form id="task-form">
+          <label for="task-input">Task</label>
+          <textarea
+            id="task-input"
+            placeholder="Enter a task, e.g. Explain Dijkstra algorithm for beginners."
+            required
+          ></textarea>
+          <button id="run-button" type="submit">Run Task</button>
+        </form>
+      </section>
+
+      <section class="grid">
+        <article class="panel stat-card">
+          <h2>Routing</h2>
+          <p><strong>Classification:</strong> <span id="classification">-</span></p>
+          <p><strong>Selected Model:</strong> <span id="selected-model">-</span></p>
+          <p><strong>Status:</strong> <span id="run-status">idle</span></p>
+        </article>
+
+        <article class="panel stat-card">
+          <h2>Token Budget</h2>
+          <p><strong>Used:</strong> <span id="tokens-used">0</span></p>
+          <p><strong>Remaining:</strong> <span id="tokens-remaining">0</span></p>
+          <div class="meter">
+            <div id="meter-fill"></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel stat-card">
+          <h2>Model Budgets</h2>
+          <p>
+            <strong>Small:</strong>
+            <span id="small-budget">used 0 / cap 0</span>
+          </p>
+          <p>
+            <strong>Large:</strong>
+            <span id="large-budget">used 0 / cap 0</span>
+          </p>
+          <p>
+            <strong>Estimated Cost:</strong>
+            <span id="estimated-cost">$0.000000</span>
+          </p>
+        </article>
+
+        <article class="panel stat-card">
+          <h2>Savings (Per Prompt)</h2>
+          <p>
+            <strong>Large Tokens Avoided:</strong>
+            <span id="large-tokens-avoided">0</span>
+          </p>
+          <p>
+            <strong>Task Budget Saved:</strong>
+            <span id="task-budget-saved">0</span>
+          </p>
+          <p>
+            <strong>Estimated USD Saved:</strong>
+            <span id="usd-saved">$0.000000</span>
+          </p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Routing Decisions</h2>
+        <ul id="route-log" class="log-list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Execution Steps</h2>
+        <ul id="step-log" class="log-list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Subtask Results</h2>
+        <ul id="subtask-log" class="log-list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Agent Communication</h2>
+        <ul id="agent-log" class="log-list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Final Output</h2>
+        <pre id="final-output">No run yet.</pre>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
