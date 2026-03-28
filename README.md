@@ -242,6 +242,7 @@ Windows PowerShell:
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+Copy-Item .env.example .env
 ```
 
 macOS/Linux:
@@ -249,7 +250,10 @@ macOS/Linux:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+cp .env.example .env
 ```
+
+Then edit `.env` and set `GROQ_API_KEY` with your real key.
 
 ## Run
 
